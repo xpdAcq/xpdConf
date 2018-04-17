@@ -1,18 +1,28 @@
-ARCHIVE_BASE_DIR_NAME: .userBeamtimeArchive
-ARCHIVE_ROOT_DIR: /direct/XF28ID2/pe1_data
-BASE_DIR: /direct/XF28ID2/pe2_data
-BEAMLINE_HOST_NAME: [xf28id2-ws2, xf28id2-ws3]
-BEAMLINE_ID: 28-ID-2
-BLCONFIG_DIR_NAME: xpdConfig
-BLCONFIG_NAME: XPD_beamline_config.yml
-CALIB_CONFIG_NAME: xpdAcq_calib_info.yml
-DARK_WINDOW: 3000
-FACILITY: NSLS-II
-FRAME_ACQUIRE_TIME: 0.1
-GLBL_YAML_NAME: glbl.yml
-GROUP: XPD
-HOME_DIR_NAME: xpdUser
-IMAGE_FIELD: pe1_image
-OWNER: XPD
-SIMULATION: false
-SHUTTER_CONF: {close: 0, open: 60}
+archive_base_dir_name: .userbeamtimearchive
+archive_root_dir: /direct/xf28id2/pe1_data
+base_dir: /direct/xf28id2/pe2_data
+beamline_host_name: [xf28id2-ws2, xf28id2-ws3]
+beamline_id: 28-id-2
+blconfig_dir_name: xpdconfig
+blconfig_name: xpd_beamline_config.yml
+calib_config_name: xpdacq_calib_info.yml
+dark_window: 3000
+facility: NSLS-II
+frame_acquire_time: 0.1
+glbl_yaml_name: glbl.yml
+group: XPD
+home_dir_name: xpduser
+image_field: pe1_image
+owner: XPD
+simulation: false
+shutter_conf: {close: 0, open: 60}
+mask_kwargs:
+  edge: 30
+  lower_thresh: 0.0
+  bs_width: 13
+  tri_offset: 13
+  v_asym: 0
+  alpha: 3.0
+dark_field_key : sc_dk_field_uid
+det_image_field : pe1_image
+exp_broker_name: xpd
