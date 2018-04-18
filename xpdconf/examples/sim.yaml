@@ -11,7 +11,7 @@ facility: sim
 frame_acquire_time: 0.1
 glbl_yaml_name: glbl.yml
 group: sim
-home_dir_name: xpduser
+home_dir_name: xpdUser
 image_field: pe1_image
 owner: sim
 simulation: true
