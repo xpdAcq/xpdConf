@@ -140,3 +140,4 @@ glbl_dict.update({k: os.path.join(glbl_dict['base_dir'],
                                   glbl_dict[z]) for k, z in
                   zip(['home_dir', 'blconfig_dir'],
                       ['home_dir_name', 'blconfig_dir_name'])})
+
