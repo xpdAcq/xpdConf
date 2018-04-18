@@ -47,7 +47,7 @@ def lookup_config():
 
 
 glbl_dict = lookup_config()
-glbl_dict.update(USER_BACKUP_DIR_NAME=strftime('%Y'))
+glbl_dict.update(user_backup_dir_name=strftime('%Y'))
 XPD_SHUTTER_CONF = glbl_dict['shutter_conf']
 
 """ Expect dir
@@ -128,7 +128,15 @@ glbl_dict.update(dict(is_simulation=glbl_dict['simulation'],
                       auto_load_calib=True,
                       calib_config_name=glbl_dict['calib_config_name'],
                       # instrument config
-                      det_image_field=glbl_dict['image_field']
+                      det_image_field=glbl_dict['image_field'],
+                      all_folders=ALL_FOLDERS,
+                      userscript_dir=USERSCRIPT_DIR,
+                      _exclude_dir=[HOME_DIR, BLCONFIG_DIR, YAML_DIR],
+                      archive_base_dir=ARCHIVE_BASE_DIR
                       ))
 
 glbl_dict['exp_db'] = Broker.named(glbl_dict['exp_broker_name'])
+glbl_dict.update({k: os.path.join(glbl_dict['base_dir'],
+                                  glbl_dict[z]) for k, z in
+                  zip(['home_dir', 'blconfig_dir'],
+                      ['home_dir_name', 'blconfig_dir_name'])})
