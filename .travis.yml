@@ -61,9 +61,4 @@ script:
   - coverage run run_tests.py
   - coverage report -m
   - codecov
-  - flake8 xpdan
-  - conda install --yes --file requirements/docs.txt
-  - cd docs
-  - make html
-  - cd ..
-  - doctr deploy . --built-docs ./docs/_build/html;
+  - flake8 xpdconf
