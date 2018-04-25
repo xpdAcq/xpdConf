@@ -1,0 +1,8 @@
+codecov:
+  default: {conda: codecov}
+coverage:
+  default: {conda: coverage}
+flake8:
+  default: {conda: flake8}
+pytest:
+  default: {conda: pytest}

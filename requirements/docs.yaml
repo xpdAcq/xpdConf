@@ -1,0 +1,6 @@
+doctr:
+  default: {conda: doctr}
+sphinx:
+  default: {conda: sphinx}
+sphinx_rtd_theme:
+  default: {conda: sphinx_rtd_theme}
