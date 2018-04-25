@@ -48,8 +48,9 @@ before_install:
 
 install:
   - export GIT_FULL_HASH=`git rev-parse HEAD`
-  - conda create -n testenv python=$TRAVIS_PYTHON_VERSION orch
+  - conda create -n testenv python=$TRAVIS_PYTHON_VERSION
   - source activate testenv
+  - pip install git+git@github.com:xpdAcq/orch.git$egg=orch
   - orch requirements/build.yaml
   - pip install .
 
