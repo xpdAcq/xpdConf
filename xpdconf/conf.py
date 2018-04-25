@@ -24,6 +24,7 @@ def lookup_config():
     """Copyright (c) 2014-2017 Brookhaven Science Associates, Brookhaven
     National Laboratory"""
     tried = []
+    d = None
     for path in CONFIG_SEARCH_PATH:
         if os.path.exists(path):
             filenames = os.listdir(path)
@@ -34,7 +35,7 @@ def lookup_config():
         if filename and os.path.isfile(os.path.join(path, filename)):
             with open(os.path.join(path, filename)) as f:
                 d = yaml.load(f)
-    else:
+    if d is None:
         print("No config file could be found in "
               "the following locations:\n{}"
               "".format('\n'.join(tried)))
@@ -42,7 +43,6 @@ def lookup_config():
         with open(sim_config_path) as f:
             d = yaml.load(f)
     d = {k.lower(): v for k, v in d.items()}
-    d.update()
     return d
 
 
