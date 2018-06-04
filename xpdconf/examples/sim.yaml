@@ -24,5 +24,4 @@ mask_kwargs:
   v_asym: 0
   alpha: 3.0
 dark_field_key : sc_dk_field_uid
-det_image_field : pe1_image
 exp_broker_name: 'temp'
