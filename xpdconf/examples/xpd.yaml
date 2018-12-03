@@ -26,3 +26,4 @@ mask_kwargs:
 dark_field_key : sc_dk_field_uid
 det_image_field : pe1_image
 exp_broker_name: xpd
+shutter_sleep: .1
