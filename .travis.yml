@@ -51,13 +51,10 @@ install:
   - conda create -n testenv python=$TRAVIS_PYTHON_VERSION
   - source activate testenv
   - pip install git+git://github.com/xpdAcq/orch.git#egg=orch
-  - orch requirements/build.yaml
-  - pip install .
+  - orch score.yaml
 
 script:
   - set -e
-  - orch requirements/run.yaml
-  - orch requirements/test.yaml
   - coverage run run_tests.py
   - coverage report -m
   - codecov
