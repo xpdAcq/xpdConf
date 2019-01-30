@@ -4,6 +4,15 @@ xpdConf Change Log
 
 .. current developments
 
+v0.2.1
+====================
+
+**Fixed:**
+
+* ``outbout`` to ``outbound``
+
+
+
 v0.2.0
 ====================
 
