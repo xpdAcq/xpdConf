@@ -135,7 +135,7 @@ glbl_dict.update(
         auto_load_calib=True,
         calib_config_name=glbl_dict["calib_config_name"],
         # instrument config
-        det_image_field=glbl_dict["image_field"],
+        det_image_field=glbl_dict["image_fields"],
         all_folders=ALL_FOLDERS,
         userscript_dir=USERSCRIPT_DIR,
         _exclude_dir=[HOME_DIR, BLCONFIG_DIR, YAML_DIR],
