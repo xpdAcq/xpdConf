@@ -12,7 +12,7 @@ frame_acquire_time: 0.1
 glbl_yaml_name: glbl.yml
 group: XPD
 home_dir_name: xpdUser
-image_field: pe1_image
+image_fields: ["pe1_image", "pe2_image", "pe3_image"]
 owner: XPD
 simulation: false
 shutter_conf: {close: 0, open: 60}
