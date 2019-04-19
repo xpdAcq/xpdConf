@@ -28,6 +28,6 @@ exp_broker_name: 'temp'
 shutter_sleep: .1
 inbound_proxy_address: '127.0.0.1:5567'
 outbound_proxy_address: '127.0.0.1:5568'
-radiograph_names: []'blackfly_det']
+radiograph_names: ['blackfly_det']
 radiogram_dets: ['blackfly_det']
 diffraction_dets: ['pe1c', 'pe1', 'pe2c', 'pe2']
