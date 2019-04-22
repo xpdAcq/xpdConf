@@ -4,6 +4,15 @@ xpdConf Change Log
 
 .. current developments
 
+v0.3.0
+====================
+
+**Added:**
+
+* ``radiograph_names, radiogram_dets, diffraction_dets`` keys
+
+
+
 v0.2.1
 ====================
 
