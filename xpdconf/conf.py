@@ -33,7 +33,7 @@ def lookup_config():
             filenames = []
         filename = next(iter(filenames), None)
         tried.append(path)
-        if filename and os.path.isfile(os.path.join(path, filename)):
+        if filename and os.path.isfile(os.path.join(path, filename)) and os.path.splitext(filename)[-1] in ['.yaml', '.yml']:
             with open(os.path.join(path, filename)) as f:
                 d = yaml.load(f)
     if d is None:
