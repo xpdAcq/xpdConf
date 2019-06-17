@@ -1,0 +1,16 @@
+description: 'lightweight personal database'
+metadatastore:
+    module: 'databroker.headersource.sqlite'
+    class: 'MDS'
+    config:
+        directory: '{base_dir}/db'
+        timezone: 'US/Eastern'
+assets:
+    module: 'databroker.assets.sqlite'
+    class: 'Registry'
+    config:
+        dbpath: '{base_dir}/db/assets.sqlite'
+handlers:
+    NPY_SEQ:
+        module: 'ophyd.sim'
+        class: 'NumpySeqHandler'
