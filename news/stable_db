@@ -1,0 +1,14 @@
+**Added:** None
+
+**Changed:**
+
+* Databroker used for simulations is now stable under acqsim so acq and an
+  touch the same databases
+
+**Deprecated:** None
+
+**Removed:** None
+
+**Fixed:** None
+
+**Security:** None
