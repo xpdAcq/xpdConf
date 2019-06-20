@@ -17,6 +17,8 @@ run:
     default: {conda: databroker}
   pyyaml:
     default: {conda: pyyaml}
+  ophyd:
+    default: {conda: ophyd}
 test:
   codecov:
     default: {conda: codecov}
