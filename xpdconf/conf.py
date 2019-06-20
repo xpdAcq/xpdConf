@@ -147,14 +147,18 @@ glbl_dict.update(
         archive_base_dir=ARCHIVE_BASE_DIR,
     )
 )
-if glbl_dict['exp_broker_name'] == 'xpd_sim_databroker':
+if glbl_dict["exp_broker_name"] == "xpd_sim_databroker":
 
-    with open(sim_db_config_path, 'r') as f:
+    with open(sim_db_config_path, "r") as f:
 
         db_config = yaml.safe_load(f)
 
-    db_config['metadatastore']['config']['directory'] = db_config['metadatastore']['config']['directory'].format(**glbl_dict)
-    db_config['assets']['config']['dbpath'] = db_config['assets']['config']['dbpath'].format(**glbl_dict)
+    db_config["metadatastore"]["config"]["directory"] = db_config[
+        "metadatastore"
+    ]["config"]["directory"].format(**glbl_dict)
+    db_config["assets"]["config"]["dbpath"] = db_config["assets"]["config"][
+        "dbpath"
+    ].format(**glbl_dict)
     glbl_dict["exp_db"] = Broker.from_config(db_config)
 else:
     glbl_dict["exp_db"] = Broker.named(glbl_dict["exp_broker_name"])
