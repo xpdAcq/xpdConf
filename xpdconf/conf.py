@@ -19,6 +19,7 @@ else:
     CONFIG_SEARCH_PATH = (_user_conf, _local_etc, _system_etc)
 
 sim_config_path = rs_fn("xpdconf", "examples/sim.yaml")
+sim_db_config_path = rs_fn("xpdconf", "examples/sim_db.yaml")
 
 
 def lookup_config():
@@ -146,8 +147,21 @@ glbl_dict.update(
         archive_base_dir=ARCHIVE_BASE_DIR,
     )
 )
+if glbl_dict["exp_broker_name"] == "xpd_sim_databroker":
 
-glbl_dict["exp_db"] = Broker.named(glbl_dict["exp_broker_name"])
+    with open(sim_db_config_path, "r") as f:
+
+        db_config = yaml.safe_load(f)
+
+    db_config["metadatastore"]["config"]["directory"] = db_config[
+        "metadatastore"
+    ]["config"]["directory"].format(**glbl_dict)
+    db_config["assets"]["config"]["dbpath"] = db_config["assets"]["config"][
+        "dbpath"
+    ].format(**glbl_dict)
+    glbl_dict["exp_db"] = Broker.from_config(db_config)
+else:
+    glbl_dict["exp_db"] = Broker.named(glbl_dict["exp_broker_name"])
 glbl_dict.update(
     {
         k: os.path.join(glbl_dict["base_dir"], glbl_dict[z])

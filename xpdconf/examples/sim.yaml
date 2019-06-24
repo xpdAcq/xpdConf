@@ -24,7 +24,7 @@ mask_kwargs:
   v_asym: 0
   alpha: 3.0
 dark_field_key : sc_dk_field_uid
-exp_broker_name: 'temp'
+exp_broker_name: 'xpd_sim_databroker'
 shutter_sleep: .1
 inbound_proxy_address: '127.0.0.1:5567'
 outbound_proxy_address: '127.0.0.1:5568'
