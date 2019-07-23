@@ -4,6 +4,24 @@ xpdConf Change Log
 
 .. current developments
 
+v0.4.0
+====================
+
+**Added:**
+
+* Add the simulated detectors to yaml so we can run simulations
+
+**Changed:**
+
+* Databroker used for simulations is now stable under acqsim so acq and an
+  touch the same databases
+
+**Fixed:**
+
+* load only files with extensions of ``yml`` or ``yaml``
+
+
+
 v0.3.0
 ====================
 
