@@ -40,7 +40,7 @@ def lookup_config():
             and os.path.splitext(filename)[-1] in [".yaml", ".yml"]
         ):
             with open(os.path.join(path, filename)) as f:
-                d = yaml.load(f)
+                d = yaml.full_load(f)
     if d is None:
         print(
             "No config file could be found in "
@@ -49,7 +49,7 @@ def lookup_config():
         )
         print("Loading from packaged simulation configuration")
         with open(sim_config_path) as f:
-            d = yaml.load(f)
+            d = yaml.full_load(f)
     d = {k.lower(): v for k, v in d.items()}
     return d
 
