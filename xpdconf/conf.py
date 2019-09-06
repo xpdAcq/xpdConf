@@ -55,7 +55,7 @@ def lookup_config():
         )
         print("Loading from packaged simulation configuration")
         with open(sim_config_path) as f:
-            d = yaml.full_load(f)
+            d = yaml_loader(f)
     d = {k.lower(): v for k, v in d.items()}
     return d
 
