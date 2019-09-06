@@ -12,7 +12,7 @@ $VERSION_BUMP_PATTERNS = [
     ('setup.py', 'version\s*=.*,', "version='$VERSION',")
     ]
 $CHANGELOG_FILENAME = 'CHANGELOG.rst'
-$CHANGELOG_IGNORE = ['TEMPLATE']
+$CHANGELOG_IGNORE = ['TEMPLATE.rst']
 
 $GITHUB_ORG = 'xpdAcq'
 $GITHUB_REPO = $PROJECT
