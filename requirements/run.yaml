@@ -1,4 +1,4 @@
 databroker:
   default: {conda: databroker}
 pyyaml:
-  default: {conda: pyyaml}
+  default: {conda: pyyaml > 3.13}
