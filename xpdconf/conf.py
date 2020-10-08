@@ -1,14 +1,18 @@
 import os
 import sys
-import yaml
-from time import strftime
+from pathlib import Path
+import itertools
 from functools import partial
+from time import strftime
+
 from pkg_resources import parse_version
 from pkg_resources import resource_filename as rs_fn
+
+import yaml
 from databroker import Broker
 
 
-if parse_version(yaml.__version__) > parse_version('3.13'):
+if parse_version(yaml.__version__) > parse_version("3.13"):
     yaml_loader = partial(yaml.full_load)
 else:
     yaml_loader = partial(yaml.load)
@@ -34,19 +38,18 @@ def lookup_config():
     tried = []
     d = None
     for path in CONFIG_SEARCH_PATH:
-        if os.path.exists(path):
-            filenames = os.listdir(path)
-        else:
-            filenames = []
-        filename = next(iter(filenames), None)
         tried.append(path)
-        if (
-            filename
-            and os.path.isfile(os.path.join(path, filename))
-            and os.path.splitext(filename)[-1] in [".yaml", ".yml"]
+        config_path = Path(path)
+        for filename in sorted(
+            itertools.chain(config_path.glob("*.yaml"), config_path.glob("*.yml"))
         ):
-            with open(os.path.join(path, filename)) as f:
-                d = yaml_loader(f)
+            if (
+                filename
+                and os.path.isfile(os.path.join(path, filename))
+                and os.path.splitext(filename)[-1] in [".yaml", ".yml"]
+            ):
+                with open(os.path.join(path, filename)) as f:
+                    d = yaml_loader(f)
     if d is None:
         print(
             "No config file could be found in "
@@ -80,9 +83,7 @@ ARCHIVE_BASE_DIR = os.path.join(
 )
 USER_BACKUP_DIR_NAME = strftime("%Y")
 HOME_DIR = os.path.join(glbl_dict["base_dir"], glbl_dict["home_dir_name"])
-BLCONFIG_DIR = os.path.join(
-    glbl_dict["base_dir"], glbl_dict["blconfig_dir_name"]
-)
+BLCONFIG_DIR = os.path.join(glbl_dict["base_dir"], glbl_dict["blconfig_dir_name"])
 CONFIG_BASE = os.path.join(HOME_DIR, "config_base")
 YAML_DIR = os.path.join(HOME_DIR, "config_base", "yml")
 BT_DIR = YAML_DIR
@@ -159,9 +160,9 @@ if glbl_dict["exp_broker_name"] == "xpd_sim_databroker":
 
         db_config = yaml.safe_load(f)
 
-    db_config["metadatastore"]["config"]["directory"] = db_config[
-        "metadatastore"
-    ]["config"]["directory"].format(**glbl_dict)
+    db_config["metadatastore"]["config"]["directory"] = db_config["metadatastore"][
+        "config"
+    ]["directory"].format(**glbl_dict)
     db_config["assets"]["config"]["dbpath"] = db_config["assets"]["config"][
         "dbpath"
     ].format(**glbl_dict)
