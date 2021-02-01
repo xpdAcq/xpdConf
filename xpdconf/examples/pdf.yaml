@@ -15,7 +15,7 @@ home_dir_name: xpdUser
 image_fields: [ "pe1c_image", "pe2c_image" ]
 owner: XPD
 simulation: false
-shutter_conf: { close: 0, open: 60 }
+shutter_conf: { close: Close, open: Open }
 mask_kwargs:
   edge: 30
   lower_thresh: 0.0
