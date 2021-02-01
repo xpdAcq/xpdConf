@@ -1,6 +1,5 @@
 # xpdConf
-[![Build Status](https://travis-ci.org/xpdAcq/xpdConf.svg?branch=master)](https://travis-ci.org/xpdAcq/xpdConf)
+![test](https://github.com/xpdAcq/xpdConf/workflows/test/badge.svg)
 [![codecov](https://codecov.io/gh/xpdAcq/xpdConf/branch/master/graph/badge.svg)](https://codecov.io/gh/xpdAcq/xpdConf)
-[![Code Health](https://landscape.io/github/xpdAcq/xpdConf/master/landscape.svg?style=flat)](https://landscape.io/github/xpdAcq/xpdConf/master)
 
-Configuration for XPD beamlines
+The package to load configuration for xpdAcq. It will provide the ``glbl_dict`` for the xpdAcq.
