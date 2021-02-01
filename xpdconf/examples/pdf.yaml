@@ -1,7 +1,7 @@
 archive_base_dir_name: .userbeamtimearchive
 archive_root_dir: /direct/xf28id2/pe1_data
 base_dir: /direct/xf28id2/pe2_data
-beamline_host_name: [xf28id2-ws2, xf28id2-ws3]
+beamline_host_name: [ xf28id2-ws2, xf28id2-ws3 ]
 beamline_id: 28-id-2
 blconfig_dir_name: xpdConfig
 blconfig_name: xpd_beamline_config.yml
@@ -12,10 +12,10 @@ frame_acquire_time: 0.1
 glbl_yaml_name: glbl.yml
 group: XPD
 home_dir_name: xpdUser
-image_fields: ["pe1c_image", "pe2c_image"]
+image_fields: [ "pe1c_image", "pe2c_image" ]
 owner: XPD
 simulation: false
-shutter_conf: {close: 0, open: 60}
+shutter_conf: { close: 0, open: 60 }
 mask_kwargs:
   edge: 30
   lower_thresh: 0.0
@@ -23,6 +23,6 @@ mask_kwargs:
   tri_offset: 13
   v_asym: 0
   alpha: 3.0
-dark_field_key : sc_dk_field_uid
+dark_field_key: sc_dk_field_uid
 exp_broker_name: pdf
 shutter_sleep: .1
