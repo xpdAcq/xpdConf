@@ -5,7 +5,7 @@ beamline_host_name: [ xf28id2-ws2, xf28id2-ws3 ]
 beamline_id: 28-id-2
 blconfig_dir_name: xpdConfig
 blconfig_name: XPD_beamline_config.yml
-calib_config_name: xpdAcq_calib_info.yml
+calib_config_name: xpdAcq_calib_info.poni
 dark_window: 3000
 facility: sim
 frame_acquire_time: 0.1
