@@ -1,16 +1,14 @@
+import itertools
 import os
 import sys
-from pathlib import Path
-import itertools
 from functools import partial
+from pathlib import Path
 from time import strftime
-
-from pkg_resources import parse_version
-from pkg_resources import resource_filename as rs_fn
 
 import yaml
 from databroker import Broker
-
+from pkg_resources import parse_version
+from pkg_resources import resource_filename as rs_fn
 
 if parse_version(yaml.__version__) > parse_version("3.13"):
     yaml_loader = partial(yaml.full_load)
@@ -41,12 +39,12 @@ def lookup_config():
         tried.append(path)
         config_path = Path(path)
         for filename in sorted(
-            itertools.chain(config_path.glob("*.yaml"), config_path.glob("*.yml"))
+                itertools.chain(config_path.glob("*.yaml"), config_path.glob("*.yml"))
         ):
             if (
-                filename
-                and os.path.isfile(os.path.join(path, filename))
-                and os.path.splitext(filename)[-1] in [".yaml", ".yml"]
+                    filename
+                    and os.path.isfile(os.path.join(path, filename))
+                    and os.path.splitext(filename)[-1] in [".yaml", ".yml"]
             ):
                 with open(os.path.join(path, filename)) as f:
                     d = yaml_loader(f)

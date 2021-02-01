@@ -1,9 +1,10 @@
 import os
-import yaml
-import pytest
 from functools import partial
-from pkg_resources import resource_filename as rs_fn
+
+import pytest
+import yaml
 from pkg_resources import parse_version
+from pkg_resources import resource_filename as rs_fn
 
 EXP_DIR = rs_fn("xpdconf", "examples/")
 
