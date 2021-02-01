@@ -1,6 +1,0 @@
-python:
-  default: {conda: python}
-setuptools:
-  default: {conda: setuptools}
-pip:
-  default: {conda: pip}

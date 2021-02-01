@@ -3,8 +3,8 @@ $ACTIVITIES = ['version_bump',
                'changelog',
                'tag',
                'push_tag',
-               'ghrelease',
-               'conda_forge'
+               # 'ghrelease',
+               'pypi'
 ]
 
 $VERSION_BUMP_PATTERNS = [

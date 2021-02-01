@@ -23,12 +23,10 @@ jobs:
       - name: configure conda
         run: |
           conda config --append channels nsls2forge
-          conda config --append channels conda-forge
 
       - name: install requirements
         run: >-
-          conda install --file requirements/build.txt --file requirements/run.txt --file requirements/test.txt
-          --file requirements/docs.txt --quiet --yes
+          conda install --file requirements/build.txt --file requirements/run.txt --file requirements/test.txt --quiet --yes
 
       - name: install the package
         run: python -m pip install . --no-deps
