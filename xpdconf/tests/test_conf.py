@@ -1,7 +1,8 @@
-from xpdconf.conf import glbl_dict
+from databroker.v2 import Broker
 
 
 def test_glbl_dict():
+    from xpdconf.conf import glbl_dict
     print(list(glbl_dict.keys()))
     for k in [
         "home_dir",
@@ -17,8 +18,8 @@ def test_glbl_dict():
         "_export_tar_dir",
         "archive_base_dir",
         "base_dir",
-        "exp_db",
         "home_dir",
         "blconfig_dir",
     ]:
         assert glbl_dict.get(k)
+    assert isinstance(glbl_dict.get("exp_db"), Broker)

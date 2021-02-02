@@ -5,8 +5,9 @@ from functools import partial
 from pathlib import Path
 from time import strftime
 
+import databroker.v2
 import yaml
-from databroker import Broker
+from databroker import catalog
 from pkg_resources import parse_version
 from pkg_resources import resource_filename as rs_fn
 
@@ -63,6 +64,8 @@ def lookup_config():
 
 glbl_dict = lookup_config()
 glbl_dict.update(user_backup_dir_name=strftime("%Y"))
+# if the env var exists, use that as the base directory
+glbl_dict["base_dir"] = os.getenv("TEST_XPDACQ_BASE_DIR", glbl_dict["base_dir"])
 XPD_SHUTTER_CONF = glbl_dict["shutter_conf"]
 
 """ Expect dir
@@ -153,20 +156,9 @@ glbl_dict.update(
     )
 )
 if glbl_dict["exp_broker_name"] == "xpd_sim_databroker":
-
-    with open(sim_db_config_path, "r") as f:
-
-        db_config = yaml.safe_load(f)
-
-    db_config["metadatastore"]["config"]["directory"] = db_config["metadatastore"][
-        "config"
-    ]["directory"].format(**glbl_dict)
-    db_config["assets"]["config"]["dbpath"] = db_config["assets"]["config"][
-        "dbpath"
-    ].format(**glbl_dict)
-    glbl_dict["exp_db"] = Broker.from_config(db_config)
+    glbl_dict["exp_db"] = databroker.v2.temp()
 else:
-    glbl_dict["exp_db"] = Broker.named(glbl_dict["exp_broker_name"])
+    glbl_dict["exp_db"] = catalog[glbl_dict["exp_broker_name"]]
 glbl_dict.update(
     {
         k: os.path.join(glbl_dict["base_dir"], glbl_dict[z])
