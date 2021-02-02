@@ -63,6 +63,8 @@ def lookup_config():
 
 glbl_dict = lookup_config()
 glbl_dict.update(user_backup_dir_name=strftime("%Y"))
+# if the env var exists, use that as the base directory
+glbl_dict["base_dir"] = os.getenv("TEST_XPDACQ_BASE_DIR", glbl_dict["base_dir"])
 XPD_SHUTTER_CONF = glbl_dict["shutter_conf"]
 
 """ Expect dir

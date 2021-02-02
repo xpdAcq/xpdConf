@@ -1,7 +1,9 @@
-from xpdconf.conf import glbl_dict
+import os
+import tempfile
 
 
 def test_glbl_dict():
+    from xpdconf.conf import glbl_dict
     print(list(glbl_dict.keys()))
     for k in [
         "home_dir",
@@ -22,3 +24,12 @@ def test_glbl_dict():
         "blconfig_dir",
     ]:
         assert glbl_dict.get(k)
+
+
+def test_base_dir_from_env():
+    """Test if the base directory can be loaded using the environment variable."""
+    with tempfile.TemporaryDirectory() as d:
+        os.environ["TEST_XPDACQ_BASE_DIR"] = str(d)
+        from xpdconf.conf import glbl_dict
+        assert glbl_dict.get("base_dir") == str(d)
+        os.environ.pop("TEST_XPDACQ_BASE_DIR")
