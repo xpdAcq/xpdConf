@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="xpdconf",
-    version='0.4.1',
+    version='init',
     packages=find_packages(),
     description="data processing module",
     zip_safe=False,
