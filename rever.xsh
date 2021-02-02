@@ -8,8 +8,8 @@ $ACTIVITIES = ['version_bump',
 ]
 
 $VERSION_BUMP_PATTERNS = [
-    ('{}/__init__.py'.format($PROJECT.lower()), '__version__\s*=.*', "__version__ = '$VERSION'"),
-    ('setup.py', 'version\s*=.*,', "version='$VERSION',")
+    ('{}/__init__.py'.format($PROJECT.lower()), '__version__*=.*', "__version__ = '$VERSION'"),
+    ('setup.py', 'version*=.*,', "version='$VERSION',")
     ]
 $CHANGELOG_FILENAME = 'CHANGELOG.rst'
 $CHANGELOG_IGNORE = ['TEMPLATE.rst']
