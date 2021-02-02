@@ -4,6 +4,21 @@ xpdConf Change Log
 
 .. current developments
 
+vinit
+====================
+
+**Added:**
+
+* Users can use the environment variable "TEST_XPDACQ_BASE_DIR" to set the base directory
+
+**Changed:**
+
+* Shutter configure for PDF beamline changes to "Close" and "Open"
+
+* Experiment changes to version 2 databroker
+
+
+
 v0.4.1
 ====================
 
