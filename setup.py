@@ -9,5 +9,5 @@ setup(
     zip_safe=False,
     package_data={"xpdconf": ["examples/*"]},
     include_package_data=True,
-    url="http:/github.com/xpdAcq/xpdConf",
+    url="https://github.com/xpdAcq/xpdConf",
 )
