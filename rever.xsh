@@ -1,4 +1,4 @@
-$PROJECT = 'xpdConf'
+$PROJECT = 'xpdconf'
 $ACTIVITIES = ['version_bump',
                'changelog',
                'tag',
@@ -15,8 +15,8 @@ $CHANGELOG_FILENAME = 'CHANGELOG.rst'
 $CHANGELOG_IGNORE = ['TEMPLATE.rst']
 
 $GITHUB_ORG = 'xpdAcq'
-$GITHUB_REPO = $PROJECT
-$TAG_REMOTE = 'git@github.com:xpdAcq/{}.git'.format($PROJECT)
+$GITHUB_REPO = 'xpdConf'
+$TAG_REMOTE = 'git@github.com:xpdAcq/{}.git'.format($GITHUB_REPO)
 
 $LICENSE_URL = 'https://github.com/{}/{}/blob/master/LICENSE'.format($GITHUB_ORG, $GITHUB_REPO)
 
