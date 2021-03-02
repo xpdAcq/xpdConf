@@ -1,4 +1,4 @@
-$PROJECT = 'xpdconf'
+$PROJECT = 'xpdConf'
 $ACTIVITIES = ['version_bump',
                'changelog',
                'tag',
