@@ -4,6 +4,15 @@ xpdConf Change Log
 
 .. current developments
 
+v0.4.3
+====================
+
+**Added:**
+
+* Add MANIFEST.in to include yaml files in distribution
+
+
+
 v0.4.2
 ====================
 
