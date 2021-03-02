@@ -4,6 +4,15 @@ xpdConf Change Log
 
 .. current developments
 
+v0.4.5
+====================
+
+**Fixed:**
+
+* Fix the bug that the package name is "xpdConf" instead of "xpdconf" (this bug is still there for version 0.4.4)
+
+
+
 v0.4.4
 ====================
 
