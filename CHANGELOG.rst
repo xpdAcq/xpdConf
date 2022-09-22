@@ -7,7 +7,9 @@ xpdConf Change Log
 v0.4.6
 ====================
 
+**Fixed:**
 
+* Make the package compatible with `databroker==2.0.0b9`.
 
 v0.4.5
 ====================
