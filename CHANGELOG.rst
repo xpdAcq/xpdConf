@@ -4,6 +4,11 @@ xpdConf Change Log
 
 .. current developments
 
+v0.4.6
+====================
+
+
+
 v0.4.5
 ====================
 
